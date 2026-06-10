@@ -26,6 +26,7 @@
             --border-classic: #222222;
             --border-hover: #ffffff;
             --nav-height: 70px;
+            --accent-green: #00ff66;
         }
 
         html {
@@ -40,7 +41,6 @@
         }
 
         /* --- STYLISH CSS LOGOS --- */
-        /* Netflix "N" Logo */
         .netflix-n-logo {
             position: relative;
             width: 38px;
@@ -71,7 +71,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.7);
         }
 
-        /* File Logo for MT Manager */
         .file-logo {
             position: relative;
             width: 50px;
@@ -102,14 +101,12 @@
             box-shadow: 0 8px 0 var(--text-muted), 0 16px 0 var(--text-muted);
         }
 
-        /* Music Emoji Style for SoundCloud */
         .music-emoji-logo {
             font-size: 4rem;
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
             user-select: none;
         }
 
-        /* Android Minimalist Logo for HappyMod */
         .android-logo {
             position: relative;
             width: 60px;
@@ -159,7 +156,6 @@
             border-bottom-right-radius: 6px;
         }
 
-        /* Tractor Minimalist Logo for FS23 */
         .tractor-logo {
             position: relative;
             width: 65px;
@@ -213,7 +209,6 @@
             background: var(--pure-white);
         }
 
-        /* Cinema Slate / Ticket Logo for MovieBox */
         .movie-logo {
             position: relative;
             width: 55px;
@@ -241,6 +236,26 @@
             border-bottom: 8px solid transparent;
             border-left: 14px solid var(--pure-white);
             margin-left: 4px;
+        }
+
+        .yt-logo {
+            position: relative;
+            width: 65px;
+            height: 45px;
+            border: 3px solid var(--pure-white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+        .yt-play-triangle {
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            border-left: 13px solid var(--pure-white);
+            margin-left: 3px;
         }
 
         /* --- GLOBAL ANIMATIONS --- */
@@ -347,9 +362,19 @@
         .form-group label { display: block; font-family: 'Share Tech Mono', monospace; font-size: 1rem; text-transform: uppercase; margin-bottom: 10px; }
         .form-control { width: 100%; background: var(--bg-input); border: 2px solid var(--border-classic); padding: 12px 15px; color: var(--pure-white); font-size: 1rem; border-radius: 0; transition: all 0.3s ease; }
         .form-control:focus { outline: none; border-color: var(--border-hover); background: var(--bg-pure-black); }
-        .file-dropzone { border: 2px dashed var(--border-classic); padding: 30px 20px; text-align: center; background: var(--bg-input); cursor: pointer; display: block; }
-        .file-dropzone input[type="file"] { display: none; }
         .form-wrapper .btn-classic { width: 100%; }
+
+        /* --- PUBLIC REQUEST LIVE FEED GRID --- */
+        .public-queue-wrapper { max-width: 950px; margin: 50px auto 0 auto; }
+        .queue-title { font-family: 'Share Tech Mono', monospace; font-size: 1.5rem; text-transform: uppercase; margin-bottom: 25px; border-left: 4px solid var(--pure-white); padding-left: 15px; }
+        .queue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .queue-card { background: #050505; border: 2px dashed #333333; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; transition: border-color 0.3s ease; }
+        .queue-card:hover { border-color: var(--accent-green); }
+        .queue-meta-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+        .queue-platform-tag { font-size: 0.75rem; border: 1px solid var(--text-muted); padding: 2px 6px; text-transform: uppercase; color: var(--text-muted); }
+        .queue-status { font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; color: var(--accent-green); text-transform: uppercase; }
+        .queue-mod-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; color: var(--pure-white); }
+        .queue-mod-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; }
 
         /* --- ABOUT SECTION --- */
         .about-content { max-width: 850px; margin: 0 auto; text-align: center; }
@@ -388,7 +413,7 @@
                 <li><a href="#home" class="nav-link">Home</a></li>
                 <li><a href="#featured" class="nav-link">Mods</a></li>
                 <li><a href="#categories" class="nav-link">Categories</a></li>
-                <li><a href="#upload" class="nav-link">Upload</a></li>
+                <li><a href="#request" class="nav-link">Request</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
@@ -402,7 +427,7 @@
             <p class="hero-subtitle delay-1 animate-fade-up">Download the Latest Package Files & Tools</p>
             <div class="hero-buttons delay-2 animate-fade-up">
                 <a href="#featured" class="btn-classic">Browse Directory</a>
-                <a href="#upload" class="btn-classic-filled">Submit Package</a>
+                <a href="#request" class="btn-classic-filled">Request Asset</a>
             </div>
         </div>
     </section>
@@ -413,7 +438,7 @@
             <h2 class="section-title">Featured Archives</h2>
             <div class="mods-grid animate-fade-up delay-1">
                 
-                <!-- Card 1: Castle Mod APK (Red Netflix "N" Logo) -->
+                <!-- Card 1: Castle Mod APK -->
                 <div class="mod-card">
                     <div class="mod-image-placeholder">
                         <div class="netflix-n-logo">
@@ -435,7 +460,7 @@
                     </div>
                 </div>
 
-                <!-- Card 2: MT Manager Mod APK (File Document Logo) -->
+                <!-- Card 2: MT Manager Mod APK -->
                 <div class="mod-card">
                     <div class="mod-image-placeholder">
                         <div class="file-logo">
@@ -457,7 +482,7 @@
                     </div>
                 </div>
 
-                <!-- Card 3: SoundCloud Premium (Music Note Emoji Logo) -->
+                <!-- Card 3: SoundCloud Premium -->
                 <div class="mod-card">
                     <div class="mod-image-placeholder">
                         <div class="music-emoji-logo">🎵</div>
@@ -477,7 +502,7 @@
                     </div>
                 </div>
 
-                <!-- Card 4: HappyMod Modding App (Custom Android Bot Logo) -->
+                <!-- Card 4: HappyMod Modding App -->
                 <div class="mod-card">
                     <div class="mod-image-placeholder">
                         <div class="android-logo">
@@ -502,7 +527,7 @@
                     </div>
                 </div>
 
-                <!-- Card 5: Farming Simulator 23 (Custom Minimalist Tractor Logo) -->
+                <!-- Card 5: Farming Simulator 23 -->
                 <div class="mod-card">
                     <div class="mod-image-placeholder">
                         <div class="tractor-logo">
@@ -528,7 +553,7 @@
                     </div>
                 </div>
 
-                <!-- Card 6: MovieBox App (Custom CSS Cinema Logo) -->
+                <!-- Card 6: MovieBox App -->
                 <div class="mod-card">
                     <div class="mod-image-placeholder">
                         <div class="movie-logo">
@@ -546,6 +571,28 @@
                                 <div class="mod-version">Version: <span>v3.0.14</span></div>
                             </div>
                             <a href="https://www.mediafire.com/file/e9xfcuj8ryscf9y/moviebox-v-3.0.14.0415.03%255Bmoviesbox.com.co%255D.apk/file" class="btn-classic">Download APK</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7: YouTube Premium -->
+                <div class="mod-card">
+                    <div class="mod-image-placeholder">
+                        <div class="yt-logo">
+                            <div class="yt-play-triangle"></div>
+                        </div>
+                    </div>
+                    <div class="mod-info">
+                        <div class="mod-text-content">
+                            <span class="mod-tag">Media</span>
+                            <h3 class="mod-title">YouTube Premium</h3>
+                            <p class="mod-desc">Ad-free video playback ecosystem. Streamlines processing efficiency background integrations smoothly.</p>
+                        </div>
+                        <div>
+                            <div class="mod-meta">
+                                <div class="mod-version">Version: <span>v5.4.80</span></div>
+                            </div>
+                            <a href="https://www.mediafire.com/file/jq6uz3fjoqm2ltt/YouTube_5.4.80.375.apk/file" class="btn-classic">Download APK</a>
                         </div>
                     </div>
                 </div>
@@ -579,43 +626,63 @@
         </div>
     </section>
 
-    <!-- UPLOAD MOD SECTION -->
-    <section id="upload">
+    <!-- REQUEST MOD SECTION -->
+    <section id="request">
         <div class="container">
-            <h2 class="section-title">Upload Package</h2>
+            <h2 class="section-title">Request New Mod</h2>
+            
+            <!-- Terminal Form Box -->
             <div class="form-wrapper">
-                <form action="#" method="POST" onsubmit="return false;">
+                <form id="modRequestForm">
                     <div class="form-group">
-                        <label for="modName">Archive Title</label>
-                        <input type="text" id="modName" class="form-control" placeholder="e.g., System Mod Configuration" required>
+                        <label for="reqName">Requested Mod / Tool Title</label>
+                        <input type="text" id="reqName" class="form-control" placeholder="e.g., GTA San Andreas Definitive Script" required>
                     </div>
                     <div class="form-group">
-                        <label for="modCat">Category</label>
-                        <select id="modCat" class="form-control">
-                            <option>Packages</option>
-                            <option>Graphics</option>
-                            <option>Scripts & UI</option>
-                            <option>Utilities</option>
+                        <label for="reqPlatform">Target Platform Architecture</label>
+                        <select id="reqPlatform" class="form-control">
+                            <option value="Android (APK)">Android (APK)</option>
+                            <option value="PC Hardware Environment">PC Hardware Environment</option>
+                            <option value="Roblox Lua Engine Framework">Roblox Lua Engine Framework</option>
+                            <option value="Cross-Platform Script Utility">Cross-Platform Script Utility</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="modVer">Version Tag</label>
-                        <input type="text" id="modVer" class="form-control" placeholder="e.g., 1.0.0" required>
+                        <label for="reqSpecs">Required Features Matrix</label>
+                        <textarea id="reqSpecs" class="form-control" placeholder="Specify functional alterations, UI requirements, or movement engine logic..." required></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="modDesc">Description Matrix</label>
-                        <textarea id="modDesc" class="form-control" placeholder="Provide framework details and modifications..."></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label>Upload Target File (.zip / .apk)</label>
-                        <label class="file-dropzone" for="fileInput">
-                            <div class="file-dropzone-text">Drop build file here or <span>Select File</span></div>
-                            <input type="file" id="fileInput">
-                        </label>
-                    </div>
-                    <button type="submit" class="btn-classic">Submit Build</button>
+                    <button type="submit" class="btn-classic">Submit Request Terminal</button>
                 </form>
             </div>
+
+            <!-- PUBLIC LIVE VIEW QUEUE FEED -->
+            <div class="public-queue-wrapper">
+                <h3 class="queue-title">Live Requested Mods Queue</h3>
+                <div class="queue-grid" id="publicQueueGrid">
+                    
+                    <!-- Static Active Queue Item 1 -->
+                    <div class="queue-card">
+                        <div class="queue-meta-top">
+                            <span class="queue-platform-tag">Roblox Lua Engine Framework</span>
+                            <span class="queue-status">// PENDING</span>
+                        </div>
+                        <h4 class="queue-mod-name">Heist Anti-Cheat Bypass</h4>
+                        <p class="queue-mod-desc">Requesting client-to-server sync exploit patcher to test secure parameters on robbery engines.</p>
+                    </div>
+
+                    <!-- Static Active Queue Item 2 -->
+                    <div class="queue-card">
+                        <div class="queue-meta-top">
+                            <span class="queue-platform-tag">Android (APK)</span>
+                            <span class="queue-status">// PENDING</span>
+                        </div>
+                        <h4 class="queue-mod-name">CarX Street Max Resolution Fix</h4>
+                        <p class="queue-mod-desc">Looking for texture override utility to force high resolution profiles on mid-range SoC devices.</p>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -676,5 +743,45 @@
         </div>
     </footer>
 
+    <!-- INTERACTIVE SCRIPT CONTROLLER -->
+    <script>
+        document.getElementById('modRequestForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop page reload
+
+            // Get the input matrices
+            const modTitle = document.getElementById('reqName').value;
+            const targetPlatform = document.getElementById('reqPlatform').value;
+            const featuresDesc = document.getElementById('reqSpecs').value;
+            const queueGrid = document.getElementById('publicQueueGrid');
+
+            // Construct new dynamic responsive card template
+            const newCard = document.createElement('div');
+            newCard.className = 'queue-card';
+            newCard.style.borderColor = 'var(--accent-green)'; // Highlight immediate injection
+            
+            newCard.innerHTML = `
+                <div class="queue-meta-top">
+                    <span class="queue-platform-tag">${targetPlatform}</span>
+                    <span class="queue-status" style="color: var(--accent-green);">// RECEIVED</span>
+                </div>
+                <h4 class="queue-mod-name">${modTitle}</h4>
+                <p class="queue-mod-desc">${featuresDesc}</p>
+            `;
+
+            // Prepend element to the top of the grid matrix
+            queueGrid.insertBefore(newCard, queueGrid.firstChild);
+
+            // Flash reset form values
+            document.getElementById('modRequestForm').reset();
+            
+            // Revert border style after 2 seconds normal integration
+            setTimeout(() => {
+                newCard.style.borderColor = '#333333';
+                newCard.querySelector('.queue-status').innerText = '// PENDING';
+                newCard.querySelector('.queue-status').style.color = 'var(--accent-green)';
+            }, 2000);
+        });
+    </script>
+
 </body>
-</html>
+    </html>
